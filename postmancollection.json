@@ -1,0 +1,330 @@
+{
+    "info": {
+        "name": "Accident Management API",
+        "_postman_id": "your-postman-collection-id",
+        "description": "API endpoints for managing accident reports.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Accidents",
+            "item": [
+                {
+                    "name": "Get All Accidents",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/accidents",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accidents"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Accident",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {"key": "Content-Type", "value": "application/json"}
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"accidentRef\": \"AR-001\", \"accidentTypeID\": 1, \"accidentDate\": \"2024-06-23\", \"companyID\": 1, \"depotID\": 1, \"personTypeID\": 1, \"forename\": \"John\", \"surname\": \"Doe\", \"hasAnalysisCompleted\": false, \"investigationDetails\": \"Details here\", \"accidentSignOffID\": null, \"SHAManagerSignOffID\": null, \"regionalMDSignOffID\": null, \"esgHeadSignOffID\": null, \"isDeleted\": false}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/accidents",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accidents"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Specific Accident",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/accidents/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accidents", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Accident",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {"key": "Content-Type", "value": "application/json"}
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"accidentRef\": \"AR-002\", \"accidentTypeID\": 2, \"accidentDate\": \"2024-06-24\", \"companyID\": 2, \"depotID\": 2, \"personTypeID\": 2, \"forename\": \"Jane\", \"surname\": \"Smith\", \"hasAnalysisCompleted\": true, \"investigationDetails\": \"Updated details here\", \"accidentSignOffID\": 1, \"SHAManagerSignOffID\": 2, \"regionalMDSignOffID\": 3, \"esgHeadSignOffID\": 4, \"isDeleted\": false}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/accidents/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accidents", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Accident",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/accidents/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accidents", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Companies",
+            "item": [
+                {
+                    "name": "Get All Companies",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/companies",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "companies"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Company",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {"key": "Content-Type", "value": "application/json"}
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"New Company\"}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/companies",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "companies"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Specific Company",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/companies/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "companies", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Company",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {"key": "Content-Type", "value": "application/json"}
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"Updated Company\"}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/companies/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "companies", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Company",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/companies/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "companies", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Depots",
+            "item": [
+                {
+                    "name": "Get All Depots",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/depots",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "depots"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Depot",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {"key": "Content-Type", "value": "application/json"}
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"New Depot\", \"companyID\": 1}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/depots",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "depots"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Specific Depot",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/depots/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "depots", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Depot",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {"key": "Content-Type", "value": "application/json"}
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"Updated Depot\", \"companyID\": 2}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/depots/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "depots", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Depot",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/depots/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "depots", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Accident Types",
+            "item": [
+                {
+                    "name": "Get All Accident Types",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/accident-types",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accident-types"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Accident Type",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {"key": "Content-Type", "value": "application/json"}
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"New Accident Type\"}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/accident-types",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accident-types"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Specific Accident Type",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/accident-types/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accident-types", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Accident Type",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {"key": "Content-Type", "value": "application/json"}
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"Updated Accident Type\"}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/accident-types/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accident-types", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Accident Type",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/accident-types/:id",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "accident-types", ":id"],
+                            "variable": [{"key": "id", "value": "1"}]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
